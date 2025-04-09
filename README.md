@@ -66,3 +66,5 @@ RAZORPAY_SECRET=your_key_secret
 php artisan serve
 
 Access Admin Panel: http://localhost:8000/login
+Email: admin@admin.com
+Password: Password@123
