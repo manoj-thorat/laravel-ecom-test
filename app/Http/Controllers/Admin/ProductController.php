@@ -90,4 +90,17 @@ class ProductController extends Controller
 
         return redirect()->route('admin.products.index')->with('success', 'Product deleted.');
     }
+
+    public function deleteImage($id)
+    {
+        $image = \App\Models\ProductImage::findOrFail($id);
+
+        if ($image->image_path && \Storage::exists($image->image_path)) {
+            \Storage::delete($image->image_path);
+        }
+
+        $image->delete();
+
+        return back()->with('success', 'Image deleted successfully.');
+    }
 }

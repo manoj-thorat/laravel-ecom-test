@@ -36,8 +36,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::delete('/product-images/{id}', [ProductController::class, 'deleteImage'])->name('product-images.delete');
     Route::resource('products', ProductController::class);
     Route::resource('/orders', AdminOrderController::class)->only(['index', 'show'])->names('orders');
+    
 });
 
 
