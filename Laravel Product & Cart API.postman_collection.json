@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "04192457-aca7-4fbd-bec6-25a3bbb0b9ef",
+		"name": "Laravel Product & Cart API",
+		"description": "API to manage products, images, cart, and orders",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36841532",
+		"_collection_link": "https://pixel-team-1754.postman.co/workspace/5c0b2376-40f2-4cbf-8b72-31f8c9a6ed99/collection/36841532-04192457-aca7-4fbd-bec6-25a3bbb0b9ef?action=share&source=collection_link&creator=36841532"
+	},
+	"item": [
+		{
+			"name": "View Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products"
+					]
+				},
+				"description": "View all products with its details"
+			},
+			"response": []
+		},
+		{
+			"name": "Add to Cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"product_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cart",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cart"
+					]
+				},
+				"description": "Add product into a cart"
+			},
+			"response": []
+		},
+		{
+			"name": "View Cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cart",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cart"
+					]
+				},
+				"description": "View all products added into a cart"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cart Item",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"quantity\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cart/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cart",
+						"1"
+					]
+				},
+				"description": "Update cart item/product quantity"
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Item from Cart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cart/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cart",
+						"1"
+					]
+				},
+				"description": "Delete item from cart"
+			},
+			"response": []
+		},
+		{
+			"name": "Checkout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/checkout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"checkout"
+					]
+				},
+				"description": "Razorpay Payment gateway integration for checkout process"
+			},
+			"response": []
+		}
+	]
+}
